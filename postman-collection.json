@@ -1,0 +1,125 @@
+{
+  "info": {
+    "name": "Babel Candidates API",
+    "description": "API para gestión de candidatos con carga de archivos Excel/CSV",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Candidates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/candidates",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["candidates"]
+        }
+      }
+    },
+    {
+      "name": "Create Candidate - Junior",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "John",
+              "type": "text"
+            },
+            {
+              "key": "surname",
+              "value": "Doe",
+              "type": "text"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "src": "examples/postman-test.csv"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/candidates",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["candidates"]
+        }
+      }
+    },
+    {
+      "name": "Create Candidate - Senior",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "Jane",
+              "type": "text"
+            },
+            {
+              "key": "surname",
+              "value": "Smith",
+              "type": "text"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "src": "examples/senior-test.csv"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/candidates",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["candidates"]
+        }
+      }
+    },
+    {
+      "name": "Error - Missing Name",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "surname",
+              "value": "Doe",
+              "type": "text"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "src": "examples/postman-test.csv"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/candidates",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["candidates"]
+        }
+      }
+    }
+  ]
+}
